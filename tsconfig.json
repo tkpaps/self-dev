@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "jsx": "react",
+      "jsxFactory": "React.createElement",
+      "jsxFragmentFactory": "React.Fragment",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "typeRoots": ["./node_modules/@types", "./types"],    
+      "allowJs": true,
+      "outDir": "./frontend/public/",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noImplicitAny": false,
+      "skipLibCheck": true
+    },
+    "allowSyntheticDefaultImports": true,
+    "include": ["frontend/**/*"]
+  }
