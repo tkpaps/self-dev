@@ -23,16 +23,30 @@ import {
             <Box textAlign="center">
               <Heading
                 as="h1"
-                size="3xl"
+                size={{ base: 'md', md: '2xl' }}
                 fontWeight="extrabold"
                 maxW="48rem"
                 mx="auto"
                 lineHeight="1.2"
                 letterSpacing="tight"
                 color="currentColor"
+                mb="-6"
               >
-                Stand Out as a Profesional Developer
+                 Stand Out as a
               </Heading>
+               <br></br>
+                <Heading
+                    as="h1"
+                    size={{ base: 'md', md: '2xl' }}
+                    fontWeight="extrabold"
+                    maxW="48rem"
+                    mx="auto"
+                    lineHeight="1.2"
+                    letterSpacing="tight"
+                    color="accent"
+                    >
+                    Professional Developer
+                </Heading>
               <Text fontSize="xl" mt="4" maxW="xl" mx="auto" color="currentColor">
                 {'{self:dev}'} is the only place for customizable, community-driven personal and professional growth
               </Text>

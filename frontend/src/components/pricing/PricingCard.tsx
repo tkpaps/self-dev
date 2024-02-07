@@ -28,7 +28,7 @@ export const PricingCard = () => {
       borderRadius="2xl"
       boxShadow="sm"
       px={{ base: '6', md: '8' }}
-      py="2"
+      py="8"
       width="full"
       maxW="lg"
     >

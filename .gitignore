@@ -52,6 +52,9 @@ web_modules/
 # Optional npm cache directory
 .npm
 
+# babelrc
+.babelrc
+
 # Optional eslint cache
 .eslintcache
 

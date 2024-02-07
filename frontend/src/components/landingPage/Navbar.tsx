@@ -31,10 +31,13 @@ import { Logo } from './Logo'
 import { MobileDrawer } from './MobileNavbar'
 import { ToggleButton } from './ToggleButton'
 import { OAuthButtonGroup } from '../authentication/OAuthButtonGroup'
+import { SignUp } from '../authentication/SignUp'
+import { Login } from '../authentication/Login'
 import { PasswordField } from '../authentication/PasswordField'
 import { GoogleIcon, GitHubIcon } from '../authentication/ProviderIcons'
 
 export const LandingPageNavbar = () => {
+  // should change this to be like signup 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const signUpDisclosure = useDisclosure()
   const isDesktop = useBreakpointValue({ base: false, lg: true })
@@ -85,27 +88,7 @@ export const LandingPageNavbar = () => {
                                   </Text>
                                 </Stack>
                               </Stack>
-                              <Box borderRadius={{ base: 'none', sm: 'xl' }}>
-                                <Stack spacing="6">
-                                  <Stack spacing="5">
-                                    <FormControl>
-                                      <FormLabel htmlFor="email">Email</FormLabel>
-                                      <Input id="email" type="email" />
-                                    </FormControl>
-                                    <PasswordField />
-                                  </Stack>
-                                  <HStack justify="space-between">
-                                    <Checkbox defaultChecked>Remember me</Checkbox>
-                                    <Button variant="text" size="sm">
-                                            Forgot password?
-                                    </Button>
-                                  </HStack>
-                                  <Stack spacing="6">
-                                    <Button>Sign in</Button>
-                                    <OAuthButtonGroup />
-                                  </Stack>
-                                </Stack>
-                              </Box>
+                                <Login/>
                             </Stack>
                           </Container>
                         </DrawerBody>
@@ -130,41 +113,12 @@ export const LandingPageNavbar = () => {
                               <Stack spacing="6" align="center">
                                 <Stack spacing={{ base: '2', md: '3' }} textAlign="center">
                                   <Heading size={{ base: 'xs', md: 'sm' }}>Create an account</Heading>
-                                  <Text textStyle="sm" color="fg.muted" textAlign="center">
+                                  <Text color="fg.muted" textAlign="center">
                                     Already have an account? <Link as={RouterLink} to="/login">Login</Link>
                                   </Text>
                                 </Stack>
                               </Stack>
-                              <Box borderRadius={{ base: 'none', sm: 'xl' }}>
-                                <Stack spacing="6">
-                                  <Stack spacing="5">
-                                    <FormControl isRequired>
-                                      <FormLabel htmlFor="name">Name</FormLabel>
-                                      <Input id="name" type="text" />
-                                    </FormControl>
-                                    <FormControl isRequired>
-                                      <FormLabel htmlFor="email">Email</FormLabel>
-                                      <Input id="email" type="email" />
-                                    </FormControl>
-                                    <FormControl isRequired>
-                                      <FormLabel htmlFor="password">Password</FormLabel>
-                                      <Input id="password" type="password" />
-                                      <FormHelperText color="fg.muted">At least 8 characters long</FormHelperText>
-                                    </FormControl>
-                                  </Stack>
-
-                                  <Stack spacing="6">
-                                    <Button>Create account</Button>
-                                    <Button variant="secondary" leftIcon={<GoogleIcon />}>
-                                      Sign up with Google
-                                    </Button>
-                                    <Button variant="secondary" leftIcon={<GitHubIcon />}>
-                                      Sign up with GitHub
-                                    </Button>
-
-                                  </Stack>
-                                </Stack>
-                              </Box>
+                              <SignUp/>
                             </Stack>
                           </Container>
                         </DrawerBody>

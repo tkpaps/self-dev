@@ -6,7 +6,8 @@ import { extendTheme } from '@chakra-ui/react'
 import LandingPage from './pages/landingPage';
 import Pricing from './pages/Pricing';
 import { Login } from './components/authentication/Login';
-import { SignUp } from './components/authentication/SignUp';
+import { LoginPage } from './pages/LoginPage'
+import { SignUpPage } from './pages/SignUpPage';
 import myTheme from './themes/Theme';
 
 const App = () => {
@@ -16,8 +17,8 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<LandingPage/>}/>
                 <Route path='/pricing' element={<Pricing/>}/>
-                <Route path='/login' element={<Login/>}/>
-                <Route path='/signup' element={<SignUp/>}/>
+                <Route path='/login' element={<LoginPage/>}/>
+                <Route path='/signup' element={<SignUpPage/>}/>
             </Routes>
         </BrowserRouter>
     </ChakraProvider>
