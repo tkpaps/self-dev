@@ -9,41 +9,62 @@ import {
   Input,
   Link,
   Stack,
-  Text
+  Text,
+  HStack,
+  Container,
+  Divider,
 } from '@chakra-ui/react'
 import { GoogleIcon, GitHubIcon } from './ProviderIcons'
+import { PasswordField } from './PasswordField'
 
 export const SignUp = () => (
   <Box>
     <Stack spacing="6">
-      <Stack spacing="5">
-        <FormControl isRequired>
+      <Stack spacing="3">
+        <FormControl>
           <FormLabel htmlFor="name">Name</FormLabel>
           <Input id="name" type="text" />
         </FormControl>
-        <FormControl isRequired>
+        <FormControl>
           <FormLabel htmlFor="email">Email</FormLabel>
           <Input id="email" type="email" />
         </FormControl>
         <FormControl isRequired>
-          <FormLabel htmlFor="password">Password</FormLabel>
-          <Input id="password" type="password" />
+            <PasswordField/>
+          {/* <FormLabel htmlFor="password">Password</FormLabel>
+          <Input id="password" type="password" /> */}
           <FormHelperText color="fg.muted">At least 8 characters long</FormHelperText>
         </FormControl>
       </Stack>
+
       <Stack spacing="6">
         <Button>Create account</Button>
-        <Button variant="secondary" leftIcon={<GoogleIcon />}>
-              Sign up with Google
-        </Button>
-        <Button variant="secondary" leftIcon={<GitHubIcon />}>
-              Sign up with GitHub
-        </Button>
-        {/* <Text textStyle="sm" color="fg.muted" textAlign="center">
-          Already have an account? <Link as={RouterLink} to="/login">
-            Login
-          </Link>
+      <Container maxW="lg" py={{ base: '2', md: '2' }}>
+    <Stack spacing="8">
+      <Stack spacing="6">
+        <HStack>
+          <Divider />
+          <Text textStyle="sm" color="fg.muted">
+            OR
+          </Text>
+          <Divider />
+        </HStack>
+        <Stack spacing="3">
+          <Button variant="secondary" leftIcon={<GoogleIcon />}>
+            Sign up with Google
+          </Button>
+          <Button variant="secondary" leftIcon={<GitHubIcon />}>
+            Sign up with GitHub
+          </Button>
+        </Stack>
+      </Stack>
+      <HStack spacing="1" justify="center">
+        {/* <Text textStyle="sm" color="fg.muted">
+          Having issues? <Link href="#">Contact us</Link>
         </Text> */}
+      </HStack>
+    </Stack>
+  </Container>
       </Stack>
     </Stack>
   </Box>

@@ -30,11 +30,8 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { Logo } from './Logo'
 import { MobileDrawer } from './MobileNavbar'
 import { ToggleButton } from './ToggleButton'
-import { OAuthButtonGroup } from '../authentication/OAuthButtonGroup'
 import { SignUp } from '../authentication/SignUp'
 import { Login } from '../authentication/Login'
-import { PasswordField } from '../authentication/PasswordField'
-import { GoogleIcon, GitHubIcon } from '../authentication/ProviderIcons'
 
 export const LandingPageNavbar = () => {
   // should change this to be like signup 

@@ -5,7 +5,6 @@ import { theme } from '@chakra-ui/pro-theme';
 import { extendTheme } from '@chakra-ui/react'
 import LandingPage from './pages/landingPage';
 import Pricing from './pages/Pricing';
-import { Login } from './components/authentication/Login';
 import { LoginPage } from './pages/LoginPage'
 import { SignUpPage } from './pages/SignUpPage';
 import myTheme from './themes/Theme';

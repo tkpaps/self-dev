@@ -29,7 +29,7 @@ export const SignUpPage = () => (
         borderRadius={{ base: 'none', sm: 'xl' }}
       >
         <SignUp/>
-        <Stack spacing="6" mt="6">
+        <Stack spacing="6" mt="0">
           <Text textStyle="sm" color="fg.muted" textAlign="center">
           Already have an account? <Link as={RouterLink} to="/login">
             Login
