@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { PriceLayout } from '../components/pricing/PriceLayout';
 import { LandingPageNavbar } from '../components/landingPage/Navbar';
 import { Footer } from '../components/footer/Footer';
-import { FAQ } from '../components/pricing/FAQ';
+import { Features } from '../components/features/Features';
 
-export default function Pricing(props) {
+export default function FeaturesPage(props) {
   return (
     <div>
       <LandingPageNavbar/>
-      <PriceLayout/>
-      <FAQ/>
+      <Features/>
       <Footer/>
     </div>
   );

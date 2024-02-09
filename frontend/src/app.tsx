@@ -7,6 +7,8 @@ import LandingPage from './pages/landingPage';
 import Pricing from './pages/Pricing';
 import { LoginPage } from './pages/LoginPage'
 import { SignUpPage } from './pages/SignUpPage';
+import FeaturesPage from './pages/FeaturesPage'
+import DashBoardPage from './pages/DashboardPage'
 import myTheme from './themes/Theme';
 
 const App = () => {
@@ -14,10 +16,12 @@ const App = () => {
     <ChakraProvider theme={myTheme}>
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<LandingPage/>}/>
+                <Route path='/p' element={<LandingPage/>}/>
                 <Route path='/pricing' element={<Pricing/>}/>
                 <Route path='/login' element={<LoginPage/>}/>
                 <Route path='/signup' element={<SignUpPage/>}/>
+                <Route path='/features' element={<FeaturesPage/>}/>
+                <Route path='/' element={<DashBoardPage/>}/>
             </Routes>
         </BrowserRouter>
     </ChakraProvider>
