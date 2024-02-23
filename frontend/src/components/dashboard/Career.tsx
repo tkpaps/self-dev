@@ -1,67 +1,48 @@
-// Chakra imports
-import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
-// Custom components
-// import Card from "components/Card/Card.js";
-// import CardBody from "components/Card/CardBody.js";
-import React from "react";
+import { Box, Flex, Text, CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
+import React from 'react'
 
-const Career = ({
-  backgroundImage,
-  title,
-  icon,
-  number,
-  validity,
-  cvv,
-}) => {
+const Career: React.FC = () => {
   return (
     <Box
-      backgroundImage={backgroundImage}
+      m="0px"
+      // mr="10px"
+      backgroundImage="bg.surface"
       backgroundRepeat='no-repeat'
-      border="1px"
-      background='cover'
+      background='bg.surface'
       bgPosition='10%'
       p='16px'
-      h={{ sm: "220px", xl: "100%" }}
-      gridArea={{ md: "1 / 1 / 2 / 3", xl: "1 / 1 / 2 / 3" }}>
-      <Box h='100%' w='100%'>
+      flexDirection="column"
+      width="Full"
+      minWidth="0px"
+      backgroundClip="border-box"
+      borderRadius="2xl"
+      shadow="sm"
+      h={{ sm: '300px', xl: '300px' }}
+      gridArea={{ md: '1 / 1 / 1 / 1', xl: '1 / 1 / 1 / 1' }}
+    >
+      <Box h='100%' w='100%' bg="bg.surface">
         <Flex
           direction='column'
           color='accent'
           h='100%'
-          p='0px 10px 20px 10px'
+          p='0px 0px 20px 0px'
           w='100%'>
           <Flex justify='space-between' align='center'>
-            <Text fontSize='md' fontWeight='bold'>
-              {title}
+            <Text color="fg.muted" fontSize='lg' fontWeight='bold'>
+              Progress
             </Text>
-            {icon}
           </Flex>
-          <Spacer />
           <Flex direction='column'>
-            <Box>
-              <Text fontSize='xl' letterSpacing='2px' fontWeight='bold'>
-                {number}
-              </Text>
+            <Box mt="35px" textAlign="center">
+              <CircularProgress size="150px" thickness="15px" value={72} color='accent'>
+                <CircularProgressLabel color="fg.muted">72%</CircularProgressLabel>
+              </CircularProgress>
             </Box>
-            <Flex mt='14px'>
-              <Flex direction='column' me='34px'>
-                <Text fontSize='xs'>{validity.name}</Text>
-                <Text fontSize='xs' fontWeight='bold'>
-                  {validity.date}
-                </Text>
-              </Flex>
-              <Flex direction='column'>
-                <Text fontSize='xs'>{cvv.name}</Text>
-                <Text fontSize='xs' fontWeight='bold'>
-                  {cvv.code}
-                </Text>
-              </Flex>
-            </Flex>
           </Flex>
         </Flex>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Career;
+export default Career

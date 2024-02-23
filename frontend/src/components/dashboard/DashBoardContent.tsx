@@ -1,74 +1,48 @@
 import React from 'react'
 // Chakra imports
-import { Box, Flex, Grid, Icon } from "@chakra-ui/react";
-// Assets
-// import BackgroundCard1 from "assets/img/BackgroundCard1.png";
-// import { MastercardIcon, VisaIcon } from "components/Icons/Icons";
-import { FaPaypal, FaWallet } from "react-icons/fa";
-import { RiMastercardFill } from "react-icons/ri";
-// import {
-//   billingData,
-//   invoicesData,
-//   newestTransactions,
-//   olderTransactions,
-// } from "variables/general";
-// import BillingInformation from "./components/BillingInformation";
-import Career from "./Career";
-import DeepWork from "./DeepWork"
-import { BsGear } from 'react-icons/bs';
-// import Invoices from "./components/Invoices";
-// import PaymentMethod from "./components/PaymentMethod";
-// import PaymentStatistics from "./components/PaymentStatistics";
-// import Transactions from "./components/Transactions";
+import { Box, Flex, Grid, Heading, } from '@chakra-ui/react'
+import Career from './Career'
+import DeepWork from './DeepWork'
+import YesterdayChange from './YesterdayChange'
+import ToDo from './ToDo'
+import Habits from './habits/Habits'
+import Journal from './habits/Journal'
+import Mobility from './physical/Mobility'
+import Steps from './physical/Steps'
+import Workout from './physical/Workout'
+import Breakfast from './food/Breakfast'
+import Lunch from './food/Lunch'
+import Dinner from './food/Dinner'
+import Supplements from './food/Supplements'
+import FoodMisc from './food/FoodMisc'
 
-function DashBoardContent() {
+const DashBoardContent : React.FC = () => {
   return (
-    <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
-      <Grid border="1px" templateColumns={{ sm: "1fr", lg: "2fr 1.2fr" }} templateRows='1fr'>
-        <Box>
-          <Grid border="1px"
+    <Flex m="8" direction='column' >
+      <Heading size="lg" fontWeight="extrabold"
+        lineHeight="1.2"
+        letterSpacing="tight"
+        color="currentColor"
+        as="h1"
+        ml="4"
+      >
+            Overview
+      </Heading>
+      <Grid templateColumns={{ sm: '1fr', lg: '2fr 1.25fr' }} templateRows='1fr'>
+        <Box >
+          <Grid
             templateColumns={{
-              sm: "1fr",
-              md: "1fr 1fr",
-              xl: "1fr 1fr 1fr 1fr",
+              sm: '1fr',
+              md: '1fr 1fr',
+              xl: '1fr 1fr 1fr 1fr'
             }}
-            templateRows={{ sm: "auto auto auto", md: "1fr auto", xl: "1fr" }}
-            gap='10px'>
-            <Career
-              backgroundImage="teal.500"
-              title={"Purity UI"}
-              number={"7812 2139 0823 XXXX"}
-              validity={{
-                name: "VALID THRU",
-                data: "05/24",
-              }}
-              cvv={{
-                name: "CVV",
-                code: "09x",
-              }}
-              icon={
-                <Icon
-                  as={RiMastercardFill}
-                  w='48px'
-                  h='auto'
-                  color='gray.400'
-                />
-              }
-            />
-            <DeepWork
-              icon={<Icon h={"24px"} w={"24px"} color='white' as={FaWallet} />}
-              title={"Salary"}
-              description={"Belong interactive"}
-              amount={2000}
-            />
-            <DeepWork
-              icon={<Icon h={"24px"} w={"24px"} color='white' as={FaPaypal} />}
-              title={"Paypal"}
-              description={"Freelance Payment"}
-              amount={4550}
-            />
+            templateRows={{ sm: 'auto auto auto', md: '1fr 1fr', xl: '1fr' }}
+            gap='25px'
+          >
+            <Career/>
+            <YesterdayChange/>
+            <DeepWork/>
           </Grid>
-          <p>hello word 2</p>
           {/* <PaymentMethod
             title={"Payment Method"}
             mastercard={{
@@ -81,10 +55,9 @@ function DashBoardContent() {
             }}
           /> */}
         </Box>
-        <p>hello world 4</p>
-        {/* <Invoices title={"Invoices"} data={invoicesData} /> */}
+        <ToDo/>
       </Grid>
-      <Grid border="1px" templateColumns={{ sm: "1fr", lg: "1.6fr 1.2fr" }}>
+      <Grid templateColumns={{ sm: '1fr', md: '1.6fr 1.2fr', lg: '1.6fr 1.2fr' }}>
         {/* <BillingInformation title={"Billing Information"} data={billingData} />
         <Transactions
           title={"Your Transactions"}
@@ -92,10 +65,63 @@ function DashBoardContent() {
           newestTransactions={newestTransactions}
           olderTransactions={olderTransactions}
         /> */}
-        <p>hello world</p>
+      </Grid>
+      <Heading size="lg" fontWeight="extrabold"
+        lineHeight="1.2"
+        letterSpacing="tight"
+        color="currentColor"
+        as="h1"
+        ml="4"
+        mt="8"
+      >
+
+            Habits
+      </Heading>
+      <Grid gap='25px' templateColumns={{ sm: '1fr', lg: '1.5fr 1.75fr', xl: '1fr 2.5fr' }} templateRows='1fr'>
+        <Habits/>
+        <Grid gap="25px">
+          <Journal title="Morning Journal"/>
+          <Journal title="Evening Journal"/>
+        </Grid>
+      </Grid>
+      <Heading size="lg" fontWeight="extrabold"
+        lineHeight="1.2"
+        letterSpacing="tight"
+        color="currentColor"
+        as="h1"
+        ml="4"
+        mt="8"
+      >
+            Fitness
+      </Heading>
+      <Grid gap='25px' templateColumns={{ sm: '1fr', lg: '1.5fr 1.5fr', xl: '1fr 1fr' }} templateRows='1fr'>
+        <Workout/>
+        <Grid gap="25px">
+          <Steps/>
+          <Mobility/>
+        </Grid>
+      </Grid>
+      <Heading size="lg" fontWeight="extrabold"
+        lineHeight="1.2"
+        letterSpacing="tight"
+        color="currentColor"
+        as="h1"
+        ml="4"
+        mt="8"
+      >
+            Nutrition
+      </Heading>
+      <Grid gap='25px' templateColumns={{ md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr' }} templateRows='1fr'>
+        <Breakfast/>
+        <Lunch/>
+        <Dinner/>
+      </Grid>
+      <Grid mt="25px" gap='25px' templateColumns={{ sm: '1fr', lg: '1.5fr 1.5fr', xl: '1fr 1fr' }} templateRows='1fr'>
+        <FoodMisc/>
+        <Supplements/>
       </Grid>
     </Flex>
-  );
+  )
 }
 
-export default DashBoardContent;
+export default DashBoardContent

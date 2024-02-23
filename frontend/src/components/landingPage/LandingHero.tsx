@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom'
 import {
     Box,
     Button,
@@ -59,12 +60,16 @@ import {
               mb="20"
               spacing="4"
             >
-                <Button size="lg" colorScheme="teal" px="8" fontWeight="bold" fontSize="md">
-                  Get Started for Free
-                </Button>
-                <Button size="lg" colorScheme="teal" variant="outline" px="8" fontWeight="bold" fontSize="md">
-                  Learn More
-                </Button>
+                <RouterLink to="/dashboard">
+                    <Button size="lg" colorScheme="teal" px="8" fontWeight="bold" fontSize="md">
+                    Get Started for Free
+                    </Button>
+                </RouterLink>
+                <RouterLink to="/features">
+                    <Button size="lg" colorScheme="teal" variant="outline" px="8" fontWeight="bold" fontSize="md">
+                    Learn More
+                    </Button>
+                </RouterLink>
             </Stack>
           </Box>
         </Box>

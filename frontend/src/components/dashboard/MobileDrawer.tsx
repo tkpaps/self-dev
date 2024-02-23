@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button, Drawer, DrawerBody, DrawerContent, Stack, useDisclosure } from '@chakra-ui/react'
-// import { DocumentCollapse } from './DocumentCollapse'
+import { Drawer, DrawerBody, DrawerContent, useDisclosure } from '@chakra-ui/react'
 import { ToggleButton } from './ToggleButton'
 import { SideBar } from './SideBar'
 
-export const MobileDrawer = () => {
+export const MobileDrawer : React.FC = () => {
   const { isOpen, onToggle, onClose } = useDisclosure()
   return (
     <>

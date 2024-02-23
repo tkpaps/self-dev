@@ -23,6 +23,12 @@ import {
     FiMic,
     FiMusic,
     FiTwitter,
+    FiLayout,
+    FiBookOpen,
+    FiCalendar,
+    FiYoutube,
+    FiUsers,
+    FiFileText,
   } from 'react-icons/fi'
   import {
     FiBookmark,
@@ -58,17 +64,24 @@ import {
               Media
             </Text>
             <NavButton label="Home" icon={FiHome} />
-            <NavButton label="Writing" icon={FiBarChart2} aria-current="page" />
+            <NavButton label="Today" icon={FiLayout} aria-current="page" />
+            <NavButton label="Week" icon={FiCalendar} />
+            <NavButton label="Progress" icon={FiBarChart2} />
           </Stack>
           <Stack>
             <Text textStyle="sm" color="fg.subtle" fontWeight="medium">
-              Media
+              Courses
+            </Text>
+            <NavButton label="Coming Soon" icon={FiBookOpen} />
+            </Stack>
+            <Stack>
+            <Text textStyle="sm" color="fg.subtle" fontWeight="medium">
+              Free Resources
             </Text>
             <Stack spacing="1">
-              <NavButton label="Movies" icon={FiFilm} />
-              <NavButton label="Pictures" icon={FiCamera} />
-              <NavButton label="Music" icon={FiMusic} />
-              <NavButton label="Podcasts" icon={FiMic} />
+              <NavButton label="Podcast" icon={FiMic} />
+              <NavButton label="Community" icon={FiUsers} />
+              <NavButton label="Blog" icon={FiFileText} />
             </Stack>
           </Stack>
           <Stack>
@@ -76,9 +89,9 @@ import {
               Social
             </Text>
             <Stack spacing="1">
+              <NavButton label="Youtube" icon={FiYoutube} />
               <NavButton label="Twitter" icon={FiTwitter} />
               <NavButton label="Instagram" icon={FiInstagram} />
-              <NavButton label="Linkedin" icon={FiLinkedin} />
             </Stack>
           </Stack>
         </Stack>

@@ -1,45 +1,32 @@
-// Chakra imports
-import { Flex, Text, useColorModeValue, Box } from "@chakra-ui/react";
-// Custom components
-import React from "react";
-import { Card } from './general/Card'
+import { Flex, Text, useColorModeValue, Box } from '@chakra-ui/react'
 
-const DeepWork = ({ icon, title, description, amount }) => {
-  const iconTeal = useColorModeValue("teal.300", "teal.300");
-  const textColor = useColorModeValue("gray.700", "white");
+import React from 'react'
+
+const DeepWork: React.FC = () => {
 
   return (
-    <Box p="22px" display="flex" flexDirection="column" width="Full" position="relative" minWidth="0px" backgroundClip="border-box" >
-      <Box borderRadius="2xl" width="full" p='16px' display='flex' bg="bg.surface" shadow="sm">
-        <Flex direction='column' align='center' w='100%' py='14px'>
-          <Box h={"60px"} w={"60px"} bg={iconTeal}>
-            {icon}
+    <Box mt= "0px" p="0px" display="flex" flexDirection="column" width="Full" position="relative" minWidth="0px" backgroundClip="border-box"
+      gridArea={{ md: '2 / 1 / 2 / 3', xl: '1 / 3 / 1 / 5' }}>
+      <Box h={{ sm: '300px', xl: '300px' }} borderRadius="2xl" width="full" p='0px' display='flex' bg="bg.surface" shadow="sm">
+        <Flex direction='column' align='left' w='100%' py='14px'>
+          <Box>
           </Box>
           <Flex
             direction='column'
-            m='14px'
+            // m='14px'
+            p='0px 10px 20px 25px'
             justify='center'
-            textAlign='center'
-            align='center'
+            textAlign='left'
+            align='left'
             w='100%'>
-            <Text fontSize='md' color={textColor} fontWeight='bold'>
-              {title}
-            </Text>
-            <Text
-              mb='24px'
-              fontSize='xs'
-              color='gray.400'
-              fontWeight='semibold'>
-              {description}
+            <Text color="fg.muted" fontSize='lg' fontWeight='bold'>
+              Week at a Glance
             </Text>
           </Flex>
-          <Text fontSize='lg' color={textColor} fontWeight='bold'>
-            {`%${amount}`}
-          </Text>
         </Flex>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default DeepWork;
+export default DeepWork

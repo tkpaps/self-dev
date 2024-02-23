@@ -11,6 +11,14 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
+    Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
   } from '@chakra-ui/react'
   import { FiBell, FiSearch } from 'react-icons/fi'
 //   import { DocumentPopover } from './DocumentPopover'
@@ -56,7 +64,28 @@ import {
                 /> */}
                 <IconButton icon={<FiBell />} aria-label="Show notification" isRound />
               </ButtonGroup>
-              <Avatar boxSize="10" src="" />
+              <Menu>
+                {/* <Avatar boxSize="10" src="" /> */}
+                {({ isOpen }) => (
+                <>
+                <MenuButton bg="transparent" size="" isActive={isOpen} as={Button}>
+                <Avatar
+                    size="md"
+                    boxSize="10"
+                    name=""
+                    src=""
+                    onClick={() => console.log("Avatar clicked")}
+                    cursor="pointer"
+                />
+                </MenuButton>
+                <MenuList>
+                    <MenuItem>Settings</MenuItem>
+                    <MenuDivider/>
+                    <MenuItem onClick={() => null}>Logout</MenuItem>
+                </MenuList>
+                </>
+            )}
+              </Menu>
             </HStack>
           </HStack>
         </Container>
